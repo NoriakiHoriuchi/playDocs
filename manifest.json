@@ -2,7 +2,6 @@
   "manifest_version": 2,
   "name": "playDocs",
   "version": "1",
-  "default_locale": "en",
   "description": "PlayFramework Documentation Switch",
   "icons": {
     "16": "images/icon/play16.png",
