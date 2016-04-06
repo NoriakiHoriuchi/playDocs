@@ -16,10 +16,10 @@
     },
     "default_title": "playDocs"
   },
-  "page_action": {},
   "author": "NoriakiHoriuchi",
   "automation": "",
   "background": {
+    "scripts": ["js/eventPage.js"],
     "persistent": false
   },
   "permissions": [
