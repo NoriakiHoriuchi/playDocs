@@ -4,12 +4,25 @@
   "version": "1",
   "default_locale": "en",
   "description": "PlayFramework Documentation Switch",
-  "icons": {""},
-  "browser_action": {""},
+  "icons": {
+    "16": "images/icon/play16.png",
+    "48": "images/icon/play48.png",
+    "128": "images/icon/play128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon/play19.png",
+      "38": "images/icon/play38.png"
+    },
+    "default_title": "playDocs"
+  },
   "page_action": {},
   "author": "NoriakiHoriuchi",
   "automation": "",
   "background": {
     "persistent": false
-  }
+  },
+  "permissions": [
+    "activeTab"
+  ]
 }
