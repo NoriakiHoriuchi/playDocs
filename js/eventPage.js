@@ -9,6 +9,10 @@
       return tab.active === true
     }
     function isOnPlay(url) {
+      var index = url.indexOf("https://playframework.com");
+      return index !== -1;
+    }
+    function isOnPlayDoc(url) {
       var index = url.indexOf("https://playframework.com/documentation/");
       return index !== -1;
     }
@@ -63,7 +67,7 @@
     chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
       var tab = tabs.find(isActive);
       var url = tab.url;
-      if (isOnPlay(url)) {
+      if (isOnPlayDoc(url)) {
         if (isLatest(url)) {
           if (isJapanese(url)) {
             var latestEnglishUrl = toLatest(toEnglish(url));
@@ -77,7 +81,11 @@
           chrome.tabs.update(tab.id, {url: latestUrl});
         }
       } else {
-        window.open("https://playframework.com/documentation/2.5.x/Home");
+        if (isOnPlay(url)) {
+          // need nothing to do
+        } else {
+          window.open("https://playframework.com/documentation/2.5.x/Home");
+        }
       }
     });
   });
